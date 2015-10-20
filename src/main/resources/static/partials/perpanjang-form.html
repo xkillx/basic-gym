@@ -1,0 +1,37 @@
+<h1>Perpanjang Member</h1>
+
+<form name="perpanjangForm" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                <div class="form-group">
+                    <label>Nama</label>
+                    <input name="nama" class="form-control" ng-model="perpanjang_member.nama" disabled />
+                </div>
+
+               <div class="form-group" ng-class="{ 'has-error' : perpanjangForm.tanggal_perpanjang.$invalid && !perpanjangForm.tanggal_perpanjang.$pristine }">
+                    <label>Tanggal Perpanjang</label>
+                    <datepicker date-set={{now}} date-format="yyyy-MM-dd">
+                        <input name="tanggal_perpanjang" class="form-control" ng-model="perpanjang_member.tanggal_perpanjang" required />
+                    </datepicker>
+                    <p ng-show="perpanjang_member.tanggal_perpanjang.$invalid && !perpanjang_member.tanggal_perpanjang.$pristine" class="help-block">
+                        Tanggal perpanjang tidak boleh kosong
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>Biaya</label>
+                    <input name="biaya" class="form-control" ng-model="perpanjang_member.biaya" disabled />
+                </div>
+
+                <button ng-disabled="memberForm.$invalid" class="btn btn-primary" ng-click="insert(perpanjang_member)">Simpan</button>
+                <button class="btn btn-default" ng-click="cancel()">Batal</button>
+                
+            </div> <!-- well -->
+
+        </div> <!-- col-md-6 -->
+
+    </div> <!-- row -->
+
+</form>
+</div>

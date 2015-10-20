@@ -1,0 +1,34 @@
+<h1>Edit Data Kelas</h1>
+
+<form name="kelasForm" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                <div class="form-group">
+                    <label>Nama Kelas</label>
+                    <input name="nama" class="form-control" ng-model="kelas.nama" disabled />
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : kelasForm.biaya.$invalid && !kelasForm.biaya.$pristine }">
+                    <label>Biaya Per Bulan</label>
+                    <input name="biaya" class="form-control" ng-model="kelas.biaya" required />
+                    <p ng-show="kelasForm.biaya.$invalid && !kelasForm.biaya.$pristine" class="help-block ">Biaya tidak boleh kosong.</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Biaya Daftar</label>
+                    <input name="biaya" class="form-control" ng-model="kelas.biaya_daftar" />
+                </div>
+
+                <button ng-disabled="kelasForm.$invalid" class="btn btn-primary" ng-click="update(kelas)">Update</button>
+
+                <button class="btn btn-default" ng-click="cancel()">Batal</button>
+            </div>
+                
+            </div> <!-- well -->
+
+        </div> <!-- col-md-6 -->
+    </div> <!-- row -->
+
+</form>
+</div>

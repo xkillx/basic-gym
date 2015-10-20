@@ -1,0 +1,57 @@
+<h1>Transaksi Penjualan</h1>
+
+<form name="penjualanForm" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+               <div class="form-group" ng-class="{ 'has-error' : penjualanForm.tanggal.$invalid && !penjualanForm.tanggal.$pristine }">
+                    <label>Tanggal Transaksi</label>
+                    <datepicker date-set={{now}} date-format="yyyy-MM-dd">
+                        <input name="tanggal" class="form-control" ng-model="penjualan.tanggal" required />
+                    </datepicker>
+                    <p ng-show="penjualan.tanggal.$invalid && !penjualan.tanggal.$pristine" class="help-block">
+                        Tanggal transaksi tidak boleh kosong
+                    </p>
+                </div>
+
+               <div class="form-group" ng-class="{ 'has-error' : penjualanForm.barang.$invalid && !penjualanForm.barang.$pristine }">
+                    <label>Pilih Barang</label>
+                    <select name="barang" class="form-control" ng-options="b as b.nama for b in barang" ng-model="selectedItem" ng-change="update()"></select>
+                    <p ng-show="penjualan.barang.$invalid && !penjualan.barang.$pristine" class="help-block">
+                        Barang tidak boleh kosong
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>Harga</label>
+                    <input name="biaya" class="form-control" ng-model="penjualan.harga_barang" disabled />
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : penjualanForm.jumlah.$invalid && !penjualanForm.jumlah.$pristine }">
+                    <label>Jumlah</label>
+                    <input name="jumlah" class="form-control" type="text" ng-model="penjualan.jumlah" ng-change="change()" required>
+                    <p ng-show="penjualanForm.jumlah.$invalid && !penjualanForm.jumlah.$pristine" class="help-block">
+                        Jumlah tidak boleh kosong
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>Total</label>
+                    <input name="biaya" class="form-control" ng-model="penjualan.total" disabled />
+                </div>
+
+                <button ng-disabled="penjualanForm.$invalid" class="btn btn-primary" ng-click="insert(penjualan)">Simpan</button>
+                <button class="btn btn-default" ng-click="cancel()">Batal</button>
+                
+            </div> <!-- well -->
+
+        </div> <!-- col-md-6 -->
+
+    </div> <!-- row -->
+
+    <!-- <div class="row">
+        {{penjualan | json}}
+    </div> -->
+
+</form>
+</div>

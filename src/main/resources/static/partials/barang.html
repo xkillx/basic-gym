@@ -1,0 +1,44 @@
+
+<h1>List Data Barang</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <button class="btn btn-success fa fa-plus" ng-click="tambahBarang()"> Tambah Barang</button>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" ng-model="cari" placeholder="Cari">
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Nama</th>
+        <th>Harga</th>
+        <th>Stok</th>
+        <th>Deskripsi</th>
+        <th class="text-center">Aksi</th>
+    </tr>
+    <tr ng-hide="barang.length">
+        <td colspan="5" class="text-center">No Data</td>
+    </tr>
+    <tr class="repeat-animation" ng-repeat="b in barang | orderBy:'id' | filter:cari">
+        <td>{{b.id}}</td>
+        <td>{{b.nama}}</td>
+        <td>{{b.harga | currency:"Rp ":0}}</td>
+        <td>{{b.stok | number}}</td>
+        <td>{{b.deskripsi}}</td>
+        <td class="text-center">
+            <button ng-click="editBarang(b)" class="btn btn-xs btn-primary">
+                Edit
+            </button>
+            <button ng-click="deleteBarang(b.id)" class="btn btn-xs btn-danger">
+                Delete
+            </button>
+        </td>
+    </tr>
+</table>

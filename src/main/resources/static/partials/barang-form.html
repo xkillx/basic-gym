@@ -1,0 +1,52 @@
+<div ng-hide="barang.id">
+    <h1>Tambah Data Barang</h1>
+</div>
+
+<div ng-show="barang.id">
+    <h1>Edit Data Barang</h1>
+</div>
+
+<form name="barangForm" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                <div class="form-group" ng-class="{ 'has-error' : barangForm.nama.$invalid && !barangForm.nama.$pristine }">
+                    <label>Nama</label>
+                    <input name="nama" class="form-control" 
+                        ng-model="barang.nama" required />
+                    <p ng-show="barangForm.nama.$invalid && !barangForm.nama.$pristine" class="help-block">Nama tidak boleh kosong.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : barangForm.harga.$invalid && !barangForm.harga.$pristine }">
+                    <label>Harga</label>
+                    <input name="harga" class="form-control" 
+                        ng-model="barang.harga" required />
+                    <p ng-show="barangForm.harga.$invalid && !barangForm.harga.$pristine" class="help-block ">Harga tidak boleh kosong.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : barangForm.harga.$invalid && !barangForm.harga.$pristine }">
+                    <label>Stok</label>
+                    <input name="stok" class="form-control" 
+                        ng-model="barang.stok" required />
+                    <p ng-show="barangForm.stok.$invalid && !barangForm.stok.$pristine" class="help-block ">Stok tidak boleh kosong.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : barangForm.deskripsi.$invalid && !barangForm.deskripsi.$pristine }">
+                    <label>Deskripsi</label>
+                    <input name="deskripsi" class="form-control" 
+                        ng-model="barang.deskripsi" required />
+                    <p ng-show="barangForm.deskripsi.$invalid && !barangForm.deskripsi.$pristine" class="help-block ">Deskripsi tidak boleh kosong.</p>
+                </div>
+
+                <button ng-disabled="barangForm.$invalid" class="btn btn-primary" ng-click="insertBarang(barang)" ng-hide="barang.id">Simpan</button>
+                <button ng-disabled="barangForm.$invalid" class="btn btn-primary" ng-click="updateBarang(barang)" ng-show="barang.id">Update</button>
+                <button class="btn btn-default" ng-click="cancel()">Batal</button>
+                
+            </div> <!-- well -->
+
+        </div> <!-- col-md-6 -->
+
+    </div> <!-- row -->
+
+</form>
+</div>

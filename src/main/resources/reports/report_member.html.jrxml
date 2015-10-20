@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="member" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="87ba7406-6b39-42c7-9f83-9ca3e4831332">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="id" class="java.lang.String"/>
+	<field name="nama" class="java.lang.String"/>
+	<field name="alamat" class="java.lang.String"/>
+	<field name="tanggal_lahir" class="java.util.Date"/>
+	<field name="gender" class="java.lang.String"/>
+	<field name="telepon" class="java.lang.String"/>
+	<field name="pekerjaan" class="java.lang.String"/>
+	<field name="tanggal_daftar" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="285" y="21" width="243" height="34" uuid="8870bf40-ed35-4f68-b0e2-f05f86990ee5"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Member]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="12" width="17" height="20" uuid="483c5721-aed6-403d-a6de-468d3d7a137c"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="12" width="33" height="20" uuid="fa2f9276-8c35-4d7e-9d5b-f37a2dfb3907"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="12" width="39" height="20" uuid="d2ce7037-b9b8-43d6-8f92-2b57040fb675"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="12" width="72" height="20" uuid="7e67d56d-f810-47ac-9888-f6e0921fbf43"/>
+				<text><![CDATA[Tanggal Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="12" width="53" height="20" uuid="a255fa1c-4c88-418b-9d37-f2e1794a9f33"/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="421" y="12" width="49" height="20" uuid="921de18c-6b11-4346-bd38-5974c70c1615"/>
+				<text><![CDATA[Telepon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="499" y="12" width="63" height="20" uuid="e91ae17d-c444-448c-8f73-d65c8c005cf5"/>
+				<text><![CDATA[Pekerjaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="581" y="12" width="74" height="20" uuid="2e354ecb-1258-467a-8d9f-05b17add02b8"/>
+				<text><![CDATA[Tanggal Daftar]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="11" width="17" height="20" uuid="bbd83a80-2ada-47a0-8868-3c6c4df5f87c"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="11" width="51" height="20" uuid="e5343bb5-93da-4f5b-90e8-6cb445c3ea23"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="11" width="100" height="20" uuid="bcaaab87-4d3a-4d5d-a7f8-2af048ea284f"/>
+				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="228" y="11" width="100" height="20" uuid="55b3bafa-502f-47e5-9b7d-43287d88bcd8"/>
+				<textFieldExpression><![CDATA[$F{tanggal_lahir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="11" width="53" height="20" uuid="3d710a2f-ede2-4d3f-81e6-75ea702b7ca1"/>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="11" width="60" height="20" uuid="a65aaccf-b826-4e1a-8d9c-119b9b5c620c"/>
+				<textFieldExpression><![CDATA[$F{telepon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="499" y="11" width="82" height="20" uuid="cfa32731-f414-4b74-95b4-d7394a4a3af3"/>
+				<textFieldExpression><![CDATA[$F{pekerjaan}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="581" y="11" width="100" height="20" uuid="5bf2cd71-11d2-489d-bcce-af7a6af57d79"/>
+				<textFieldExpression><![CDATA[$F{tanggal_daftar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

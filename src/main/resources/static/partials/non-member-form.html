@@ -1,0 +1,57 @@
+<div ng-hide="non_member.id">
+    <h1>Tambah Data Non Member</h1>
+</div>
+
+<div ng-show="non_member.id">
+    <h1>Edit Data Non Member</h1>
+</div>
+
+<form name="nonMemberForm" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                <div class="form-group" ng-class="{ 'has-error' : nonMemberForm.nama.$invalid && !nonMemberForm.nama.$pristine }">
+                    <label>Nama</label>
+                    <input name="nama" class="form-control" ng-model="non_member.nama" required />
+                    <p ng-show="nonMemberForm.nama.$invalid && !nonMemberForm.nama.$pristine" class="help-block">Nama tidak boleh kosong.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : nonMemberForm.gender.$invalid && !nonMemberForm.gender.$pristine }">
+                    <label>Gender</label>
+                    <select name="gender" class="form-control" ng-model="non_member.gender" required>
+                        <option value="Pria">Pria</option>
+                        <option value="Wanita">Wanita</option>
+                    </select>
+                    <p ng-show="nonMemberForm.gender.$invalid && !nonMemberForm.gender.$pristine" class="help-block">
+                        Gender tidak boleh kosong
+                    </p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : nonMemberForm.tanggal_datang.$invalid && !nonMemberForm.tanggal_datang.$pristine }">
+                    <label>Tanggal Datang</label>
+                    <datepicker date-set={{now}} date-format="yyyy-MM-dd">
+                        <input name="tanggal_datang" class="form-control" ng-model="non_member.tanggal_datang" required />
+                    </datepicker>
+                    <p ng-show="nonMemberForm.tanggal_datang.$invalid && !nonMemberForm.tanggal_datang.$pristine" class="help-block">
+                        Tanggal datang tidak boleh kosong
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>Kelas</label>
+                    <input class="form-control" ng-model="non_member.kelas" disabled />
+                </div>
+
+                <div class="form-group">
+                    <label>Biaya</label>
+                    <input class="form-control" ng-model="non_member.biaya" disabled />
+                </div>
+
+                <button ng-disabled="nonMemberForm.$invalid" class="btn btn-primary" ng-click="insert(non_member)" ng-hide="non_member.id">Simpan</button>
+                <button ng-disabled="nonMemberForm.$invalid" class="btn btn-primary" ng-click="update(non_member)" ng-show="non_member.id">Update</button>
+                <button class="btn btn-default" ng-click="cancel()">Batal</button>
+                
+            </div> <!-- well -->
+
+</form>
+</div>
