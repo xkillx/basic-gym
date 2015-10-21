@@ -1,8 +1,8 @@
-<div ng-hide="barang.id">
+<div ng-hide="barang.id_barang">
     <h1>Tambah Data Barang</h1>
 </div>
 
-<div ng-show="barang.id">
+<div ng-show="barang.id_barang">
     <h1>Edit Data Barang</h1>
 </div>
 
@@ -31,15 +31,13 @@
                     <p ng-show="barangForm.stok.$invalid && !barangForm.stok.$pristine" class="help-block ">Stok tidak boleh kosong.</p>
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-error' : barangForm.deskripsi.$invalid && !barangForm.deskripsi.$pristine }">
+                <div class="form-group">
                     <label>Deskripsi</label>
-                    <input name="deskripsi" class="form-control" 
-                        ng-model="barang.deskripsi" required />
-                    <p ng-show="barangForm.deskripsi.$invalid && !barangForm.deskripsi.$pristine" class="help-block ">Deskripsi tidak boleh kosong.</p>
+                    <input name="deskripsi" class="form-control" ng-model="barang.deskripsi" />
                 </div>
 
-                <button ng-disabled="barangForm.$invalid" class="btn btn-primary" ng-click="insertBarang(barang)" ng-hide="barang.id">Simpan</button>
-                <button ng-disabled="barangForm.$invalid" class="btn btn-primary" ng-click="updateBarang(barang)" ng-show="barang.id">Update</button>
+                <button ng-disabled="barangForm.$invalid" class="btn btn-primary" ng-click="insertBarang(barang)" ng-hide="barang.id_barang">Simpan</button>
+                <button ng-disabled="barangForm.$invalid" class="btn btn-primary" ng-click="updateBarang(barang)" ng-show="barang.id_barang">Update</button>
                 <button class="btn btn-default" ng-click="cancel()">Batal</button>
                 
             </div> <!-- well -->

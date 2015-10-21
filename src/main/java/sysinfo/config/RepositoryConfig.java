@@ -15,6 +15,5 @@ public class RepositoryConfig extends SpringBootRepositoryRestMvcConfiguration {
         config.exposeIdsFor(Kelas.class);
         config.exposeIdsFor(PerpanjangMember.class);
         config.exposeIdsFor(Penjualan.class);
-        config.exposeIdsFor(Pembelian.class);
     }
 }

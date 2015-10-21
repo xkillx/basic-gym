@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nonmember_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="36c29805-6278-4ae9-be63-68e59fbbbffd">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.1000000000000005"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<field name="id" class="java.lang.String"/>
+	<field name="id_nonmember" class="java.lang.Integer"/>
 	<field name="nama" class="java.lang.String"/>
 	<field name="gender" class="java.lang.String"/>
 	<field name="tanggal_datang" class="java.util.Date"/>
+	<field name="biaya" class="java.lang.Integer"/>
+	<variable name="total" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{biaya}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -27,50 +31,76 @@
 	<columnHeader>
 		<band height="28" splitType="Stretch">
 			<staticText>
-				<reportElement x="26" y="2" width="100" height="20" uuid="c32ec125-b2aa-44f0-8503-005cd6a0608c"/>
-				<text><![CDATA[ID]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="141" y="2" width="100" height="20" uuid="558f6444-48d8-4e3d-8cb8-029820e16b2c"/>
+				<reportElement x="126" y="2" width="100" height="20" uuid="558f6444-48d8-4e3d-8cb8-029820e16b2c"/>
 				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="265" y="1" width="100" height="20" uuid="a45e96e7-f3b9-4f28-b1cb-dcd8386dd1d9"/>
+				<reportElement x="243" y="1" width="41" height="20" uuid="a45e96e7-f3b9-4f28-b1cb-dcd8386dd1d9"/>
 				<text><![CDATA[Gender]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="390" y="1" width="100" height="20" uuid="5c3f9aac-f670-4ad7-bfd6-f4af6f6a33b0"/>
+				<reportElement x="328" y="1" width="100" height="20" uuid="5c3f9aac-f670-4ad7-bfd6-f4af6f6a33b0"/>
 				<text><![CDATA[Tanggal Datang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="2" width="100" height="20" uuid="1f50b49c-1fe8-49f8-9ae7-9fcd30736c35"/>
+				<text><![CDATA[ID Non Member]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="2" width="100" height="20" uuid="ab809a04-c8e6-40ca-b719-a768a262bc90"/>
+				<text><![CDATA[Biaya]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="21" splitType="Stretch">
 			<textField>
-				<reportElement x="26" y="0" width="100" height="20" uuid="e404b63f-e6c8-4cc1-823a-4369dae155ae"/>
-				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="141" y="1" width="100" height="20" uuid="5f6c144a-5d81-4f48-bf56-f22bc524b765"/>
+				<reportElement x="126" y="0" width="100" height="20" uuid="5f6c144a-5d81-4f48-bf56-f22bc524b765"/>
 				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="265" y="0" width="100" height="20" uuid="3db0250d-9fb5-43dd-977b-eb76f5e6db95"/>
+				<reportElement x="243" y="0" width="41" height="20" uuid="3db0250d-9fb5-43dd-977b-eb76f5e6db95"/>
 				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="390" y="0" width="100" height="20" uuid="7c9c8006-e986-44a4-8baa-7ba98226142f"/>
+				<reportElement x="328" y="0" width="100" height="20" uuid="7c9c8006-e986-44a4-8baa-7ba98226142f"/>
 				<textFieldExpression><![CDATA[$F{tanggal_datang}]]></textFieldExpression>
+			</textField>
+			<textField pattern="NMBR000">
+				<reportElement x="11" y="0" width="100" height="20" uuid="b943bcab-7eb6-4b66-91b6-48688bae8573"/>
+				<textFieldExpression><![CDATA[$F{id_nonmember}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="438" y="0" width="100" height="20" uuid="b9e3be95-e89a-4631-9933-8f56c06069a1"/>
+				<textFieldExpression><![CDATA[$F{biaya}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="393" y="6" width="35" height="20" uuid="437827c7-053c-4b04-acbd-54af98691d5a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="2" width="555" height="1" uuid="3d7db034-24d8-4982-985e-953df1487098"/>
+			</line>
+			<textField pattern="#,##0">
+				<reportElement x="438" y="6" width="100" height="20" uuid="15284531-4299-439c-860c-e690e0cb1ae5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+		</band>
 	</summary>
 </jasperReport>

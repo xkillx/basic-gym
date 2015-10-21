@@ -7,18 +7,26 @@ import java.util.Date;
 @Table(name = "member")
 public class Member {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    @Id @GeneratedValue
+    private Integer id_member;
 
     @Column(name = "nama", nullable = false)
     private String nama;
 
-    @Column(name = "alamat", nullable = false)
-    private String alamat;
+    @Column(name = "jalan", nullable = false)
+    private String jalan;
+
+    @Column(name = "kelurahan", nullable = false)
+    private String kelurahan;
+
+    @Column(name = "kecamatan", nullable = false)
+    private String kecamatan;
+
+    @Column(name = "kota", nullable = false)
+    private String kota;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "tanggal_lahir", nullable = false)
+    @Column(name = "tanggal_lahir", nullable = true)
     private Date tanggal_lahir;
 
     @Column(name = "gender", nullable = false)
@@ -27,28 +35,22 @@ public class Member {
     @Column(name = "telepon", nullable = false)
     private String telepon;
 
-    @Column(name = "pekerjaan", nullable = false)
+    @Column(name = "pekerjaan", nullable = true)
     private String pekerjaan;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "tanggal_daftar", nullable = false)
     private Date tanggal_daftar;
 
-    @Column(name = "kelas", nullable = false)
-    private String kelas;
+    @Column(name = "biaya_daftar", nullable = false, length = 7)
+    private Integer biaya_daftar;
 
-    @Column(name = "biaya_daftar", nullable = false)
-    private Long biaya_daftar;
-
-    @Column(name = "biaya", nullable = false)
-    private Long biaya;
-
-    public String getId() {
-        return id;
+    public Integer getId_member() {
+        return id_member;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId_member(Integer id_member) {
+        this.id_member = id_member;
     }
 
     public String getNama() {
@@ -59,12 +61,36 @@ public class Member {
         this.nama = nama;
     }
 
-    public String getAlamat() {
-        return alamat;
+    public String getJalan() {
+        return jalan;
     }
 
-    public void setAlamat(String alamat) {
-        this.alamat = alamat;
+    public void setJalan(String jalan) {
+        this.jalan = jalan;
+    }
+
+    public String getKelurahan() {
+        return kelurahan;
+    }
+
+    public void setKelurahan(String kelurahan) {
+        this.kelurahan = kelurahan;
+    }
+
+    public String getKecamatan() {
+        return kecamatan;
+    }
+
+    public void setKecamatan(String kecamatan) {
+        this.kecamatan = kecamatan;
+    }
+
+    public String getKota() {
+        return kota;
+    }
+
+    public void setKota(String kota) {
+        this.kota = kota;
     }
 
     public Date getTanggal_lahir() {
@@ -107,27 +133,11 @@ public class Member {
         this.tanggal_daftar = tanggal_daftar;
     }
 
-    public String getKelas() {
-        return kelas;
-    }
-
-    public void setKelas(String kelas) {
-        this.kelas = kelas;
-    }
-
-    public Long getBiaya_daftar() {
+    public Integer getBiaya_daftar() {
         return biaya_daftar;
     }
 
-    public void setBiaya_daftar(Long biaya_daftar) {
+    public void setBiaya_daftar(Integer biaya_daftar) {
         this.biaya_daftar = biaya_daftar;
-    }
-
-    public Long getBiaya() {
-        return biaya;
-    }
-
-    public void setBiaya(Long biaya) {
-        this.biaya = biaya;
     }
 }

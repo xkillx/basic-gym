@@ -16,7 +16,7 @@ app.factory('memberService', ['$http', function($http) {
     };
 
     memberService.updateMember = function (member) {
-        return $http.put(urlBase + '/' + member.id, member)
+        return $http.put(urlBase + '/' + member.id_member, member)
     };
 
     memberService.deleteMember = function (id) {
@@ -44,35 +44,7 @@ app.factory('barangService', ['$http', function($http) {
     };
 
     barangService.updateBarang = function (barang) {
-        return $http.put(urlBase + '/' + barang.id, barang)
-    };
-
-    barangService.deleteBarang = function (id) {
-        return $http.delete(urlBase + '/' + id);
-    };
-
-    return barangService;
-}]);
-
-app.factory('barangService', ['$http', function($http) {
-
-    var urlBase = '/api/barang';
-    var barangService = {};
-
-    barangService.getListBarang = function () {
-        return $http.get(urlBase);
-    };
-
-    barangService.getBarang = function (id) {
-        return $http.get(urlBase + '/' + id);
-    };
-
-    barangService.insertBarang = function (barang) {
-        return $http.post(urlBase, barang);
-    };
-
-    barangService.updateBarang = function (barang) {
-        return $http.put(urlBase + '/' + barang.id, barang)
+        return $http.put(urlBase + '/' + barang.id_barang, barang)
     };
 
     barangService.deleteBarang = function (id) {
@@ -100,7 +72,7 @@ app.factory('nonMemberService', ['$http', function($http) {
     };
 
     nonMemberService.update = function (nonMember) {
-        return $http.put(urlBase + '/' + nonMember.id, nonMember)
+        return $http.put(urlBase + '/' + nonMember.id_nonmember, nonMember)
     };
 
     nonMemberService.delete = function (id) {
@@ -128,7 +100,7 @@ app.factory('kelasService', ['$http', function($http) {
     };
 
     kelasService.updateKelas = function (kelas) {
-        return $http.put(urlBase + '/' + kelas.id, kelas)
+        return $http.put(urlBase + '/' + kelas.id_kelas, kelas)
     };
 
     kelasService.deleteKelas = function (id) {
@@ -156,7 +128,7 @@ app.factory('perpanjangService', ['$http', function($http) {
     };
 
     perpanjangService.update = function (p) {
-        return $http.put(urlBase + '/' + p.id, p)
+        return $http.put(urlBase + '/' + p.id_perpanjang, p)
     };
 
     perpanjangService.delete = function (id) {
@@ -184,7 +156,7 @@ app.factory('penjualanService', ['$http', function($http) {
     };
 
     penjualanService.update = function (p) {
-        return $http.put(urlBase + '/' + p.id, p)
+        return $http.put(urlBase + '/' + p.id_penjualan, p)
     };
 
     penjualanService.delete = function (id) {
@@ -194,30 +166,3 @@ app.factory('penjualanService', ['$http', function($http) {
     return penjualanService;
 }]);
 
-app.factory('pembelianService', ['$http', function($http) {
-
-    var urlBase = '/api/pembelian';
-    var pembelianService = {};
-
-    pembelianService.gets = function () {
-        return $http.get(urlBase);
-    };
-
-    pembelianService.get = function (id) {
-        return $http.get(urlBase + '/' + id);
-    };
-
-    pembelianService.insert = function (p) {
-        return $http.post(urlBase, p);
-    };
-
-    pembelianService.update = function (p) {
-        return $http.put(urlBase + '/' + p.id, p)
-    };
-
-    pembelianService.delete = function (id) {
-        return $http.delete(urlBase + '/' + id);
-    };
-
-    return pembelianService;
-}]);

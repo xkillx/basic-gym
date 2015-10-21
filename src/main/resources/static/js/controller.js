@@ -1,4 +1,4 @@
-app.controller('IndexController', ['$scope', function($scope) {
+app.controller('NavbarController', ['$scope', function($scope) {
     
 }]);
 
@@ -102,14 +102,6 @@ app.controller('MemberListController', ['$scope', '$location', 'memberService', 
             toastr.info('Delete barang dibatalkan.', "BATAL");
         }
     };
-
-    $scope.tambah = function() {
-        $location.path('/member/tambah');
-    };
-
-    $scope.editMember = function(member) {
-        $location.path('/member/edit/' + member.id);
-    };
 }]);
 
 app.controller('MemberTambahController', ['$scope', '$location', 'memberService', 'kelasService', function($scope, $location, memberService, kelasService) {
@@ -117,8 +109,6 @@ app.controller('MemberTambahController', ['$scope', '$location', 'memberService'
     
     kelasService.getListKelas()
         .success(function (data) {
-            $scope.member.kelas = data._embedded.kelas[0].nama;
-            $scope.member.biaya = data._embedded.kelas[0].biaya;
             $scope.member.biaya_daftar = data._embedded.kelas[0].biaya_daftar;
         })
         .error(function (error) {
@@ -213,13 +203,34 @@ app.controller('PerpanjangController', ['$scope', '$location', '$routeParams', '
 }]);
 
 app.controller('PerpanjangListController', ['$scope', 'perpanjangService', function($scope, perpanjangService) {
-    perpanjangService.gets()
-        .success(function (data) {
-            $scope.perpanjang_member = data._embedded.perpanjang_member;
-        })
-        .error(function (error) {
-            toastr.error(error.message, "Error!");
-        });
+    gets();
+
+    function gets() {
+        perpanjangService.gets()
+            .success(function (data) {
+                $scope.perpanjang_member = data._embedded.perpanjang_member;
+            })
+            .error(function (error) {
+                toastr.error(error.message, "Error!");
+            });
+    }
+
+    $scope.delete = function (id) {
+
+        if (confirm("Yakin hapus data ini?")) {
+            perpanjangService.delete(id)
+                .success(function () {
+                    toastr.success("Data berhasil dihapus.", "SUCCESS");
+                    gets();
+                })
+                .error(function (error) {
+                    toastr.error(error.message, "Error!");
+                });
+        }
+        else {
+            toastr.info('Delete barang dibatalkan.', "BATAL");
+        }
+    };
 }]);
 
 app.controller('BarangListController', ['$scope', '$location', 'barangService', function($scope, $location, barangService) {
@@ -250,14 +261,6 @@ app.controller('BarangListController', ['$scope', '$location', 'barangService', 
         else {
             toastr.info('Delete barang dibatalkan.', "BATAL");
         }
-    };
-
-    $scope.tambahBarang = function() {
-        $location.path('/barang/tambah');
-    };
-
-    $scope.editBarang = function(member) {
-        $location.path('/barang/edit/' + member.id);
     };
 }]);
 
@@ -340,23 +343,14 @@ app.controller('NonMemberListController', ['$scope', '$location', 'nonMemberServ
             toastr.info('Delete data Non Member dibatalkan.', "BATAL");
         }
     };
-
-    $scope.tambah = function() {
-        $location.path('/non-member/tambah');
-    };
-
-    $scope.edit = function(n) {
-        $location.path('/non-member/edit/' + n.id);
-    };
 }]);
 
 app.controller('NonMemberTambahController', ['$scope', '$location', 'nonMemberService', 'kelasService', function($scope, $location, nonMemberService, kelasService) {
     $scope.now = (new Date()).toString();
 
-    kelasService.getListKelas()
+    kelasService.getKelas(2)
         .success(function (data) {
-            $scope.non_member.kelas = data._embedded.kelas[1].nama;
-            $scope.non_member.biaya = data._embedded.kelas[1].biaya;
+            $scope.non_member.biaya = data.biaya;
         })
         .error(function (error) {
             toastr.error(error.message, "Error!");
@@ -408,83 +402,6 @@ app.controller('NonMemberEditController', ['$scope', '$location', '$routeParams'
     $scope.cancel = function() {
         $location.path('/non-member');
         toastr.info('Edit data Non Member dibatalkan.', "BATAL");
-    };
-}]);
-
-app.controller('PembelianListController', ['$scope', '$location', 'pembelianService', function($scope, $location, pembelianService) {
-    gets();
-
-    function gets() {
-        pembelianService.gets()
-            .success(function (data) {
-                $scope.pembelian = data._embedded.pembelian;
-            })
-            .error(function (error) {
-                toastr.error(error.message, "Error!");
-            });
-    }
-
-    $scope.delete = function (id) {
-
-        if (confirm("Yakin hapus data ini?")) {
-            pembelianService.delete(id)
-                .success(function () {
-                    toastr.success("Transaksi pembelian berhasil dihapus", "SUCCESS");
-                    gets();
-                })
-                .error(function (error) {
-                    toastr.error(error.message, "Error!");
-                });
-        }
-        else {
-            toastr.info('Delete transaksi pembelian dibatalkan.', "BATAL");
-        }
-    };
-
-    $scope.tambah = function() {
-        $location.path('/pembelian/tambah');
-    };
-}]);
-
-app.controller('PembelianTambahController', ['$scope', '$location', 'barangService', 'pembelianService', function($scope, $location, barangService, pembelianService) {
-    $scope.now = (new Date()).toString();
-
-    getListBarang();
-
-    function getListBarang() {
-        barangService.getListBarang()
-            .success(function (data) {
-                $scope.barang = data._embedded.barang;
-            })
-            .error(function (error) {
-                toastr.error(error.message, "Error!");
-            });
-    }
-
-    $scope.change = function() {
-        $scope.pembelian.total = $scope.pembelian.harga_barang * $scope.pembelian.jumlah;
-    }
-
-    $scope.update = function() {
-        $scope.pembelian.harga_barang = $scope.selectedItem.harga;
-        $scope.pembelian.nama_barang = $scope.selectedItem.nama;
-        $scope.pembelian.id_barang = $scope.selectedItem.id;
-    }
-
-    $scope.insert = function (n) {
-        pembelianService.insert(n)
-            .success(function () {
-                $location.path('/pembelian');
-                toastr.success("Transaksi pembelian berhasil disimpan.", "SUCCESS");
-            })
-            .error(function(error) {
-                toastr.error(error.message, "Error!");
-            });
-    };
-
-    $scope.cancel = function() {
-        $location.path('/pembelian');
-        toastr.info('Transaksi pembelian dibatalkan.', "BATAL");
     };
 }]);
 
@@ -545,7 +462,7 @@ app.controller('PenjualanTambahController', ['$scope', '$location', 'barangServi
     $scope.update = function() {
         $scope.penjualan.harga_barang = $scope.selectedItem.harga;
         $scope.penjualan.nama_barang = $scope.selectedItem.nama;
-        $scope.penjualan.id_barang = $scope.selectedItem.id;
+        $scope.penjualan.id_barang = $scope.selectedItem.id_barang;
     }
 
     $scope.insert = function (n) {
@@ -565,24 +482,26 @@ app.controller('PenjualanTambahController', ['$scope', '$location', 'barangServi
     };
 }]);
 
-app.controller('RekapMemberController', ['$scope', function($scope) {
-    $scope.judul = "Ini Halaman Rekap Member";
+app.controller('RekapMemberController', ['$scope', '$location', function($scope, $location) {
+
+    $scope.cancel = function() {
+        $location.path('/home');
+        toastr.info('Rekap member dibatalkan.', "BATAL");
+    };
 }]);
 
-app.controller('RekapNonMemberController', ['$scope', function($scope) {
-    $scope.judul = "Ini Halaman Rekap Non Member";
+app.controller('RekapNonMemberController', ['$scope', '$location', function($scope, $location) {
+
+    $scope.cancel = function() {
+        $location.path('/home');
+        toastr.info('Rekap non member dibatalkan.', "BATAL");
+    };
 }]);
 
-app.controller('RekapPenjualanController', ['$scope', function($scope) {
-    $scope.judul = "Ini Halaman Rekap Penjulan";
-}]);
+app.controller('RekapPenjualanController', ['$scope', '$location', function($scope, $location) {
 
-app.controller('RekapPembelianController', ['$scope', function($scope) {
-    $scope.judul = "Ini Halaman Rekap Pembelian";
-}]);
-
-app.controller('NavbarController', ['$scope', '$location', function($scope, $location) {
-    $scope.$on('$routeChangesuccess', function(event, current) {
-        $scope.path = $location.path();
-    });
+    $scope.cancel = function() {
+        $location.path('/home');
+        toastr.info('Rekap penjualan dibatalkan.', "BATAL");
+    };
 }]);

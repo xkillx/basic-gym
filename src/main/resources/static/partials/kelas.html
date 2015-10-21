@@ -22,13 +22,13 @@
     <tr ng-hide="kelas.length">
         <td colspan="5" class="text-center">No Data</td>
     </tr>
-    <tr class="repeat-animation" ng-repeat="k in kelas | orderBy:'id' | filter:cari">
-        <td>{{k.id}}</td>
+    <tr class="repeat-animation" ng-repeat="k in kelas | orderBy:'id_kelas' | filter:cari">
+        <td>{{k.id_kelas}}</td>
         <td>{{k.nama}}</td>
         <td>{{k.biaya | currency:"Rp ":0}}</td>
         <td>{{k.biaya_daftar | currency:"Rp ":0}}</td>
         <td class="text-center">
-            <a href="#/kelas/edit/{{ k.id }}" class="btn btn-xs btn-primary">
+            <a href="#/kelas/edit/{{ k.id_kelas }}" class="btn btn-xs btn-primary">
                 Edit
             </a>
         </td>

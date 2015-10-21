@@ -6,9 +6,8 @@ import javax.persistence.*;
 @Table(name = "kelas")
 public class Kelas {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    @Id @GeneratedValue
+    private Integer id_kelas;
 
     @Column(name = "nama", nullable = false)
     private String nama;
@@ -19,12 +18,12 @@ public class Kelas {
     @Column(name = "biaya_daftar", nullable = false)
     private Long biaya_daftar;
 
-    public String getId() {
-        return id;
+    public Integer getId_kelas() {
+        return id_kelas;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId_kelas(Integer id_kelas) {
+        this.id_kelas = id_kelas;
     }
 
     public String getNama() {

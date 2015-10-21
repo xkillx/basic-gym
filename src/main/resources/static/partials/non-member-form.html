@@ -38,17 +38,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Kelas</label>
-                    <input class="form-control" ng-model="non_member.kelas" disabled />
-                </div>
-
-                <div class="form-group">
                     <label>Biaya</label>
                     <input class="form-control" ng-model="non_member.biaya" disabled />
                 </div>
 
-                <button ng-disabled="nonMemberForm.$invalid" class="btn btn-primary" ng-click="insert(non_member)" ng-hide="non_member.id">Simpan</button>
-                <button ng-disabled="nonMemberForm.$invalid" class="btn btn-primary" ng-click="update(non_member)" ng-show="non_member.id">Update</button>
+                <button ng-disabled="nonMemberForm.$invalid" class="btn btn-primary" ng-click="insert(non_member)" ng-hide="non_member.id_nonmember">Simpan</button>
+                <button ng-disabled="nonMemberForm.$invalid" class="btn btn-primary" ng-click="update(non_member)" ng-show="non_member.id_nonmember">Update</button>
                 <button class="btn btn-default" ng-click="cancel()">Batal</button>
                 
             </div> <!-- well -->

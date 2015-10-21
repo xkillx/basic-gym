@@ -20,7 +20,7 @@ public class PenjualanEventHandler {
     @HandleBeforeCreate
     public void handlePenjualanCreate(Penjualan penjualan) {
         Barang barang = br.findOne(penjualan.getId_barang());
-        Long stok = barang.getStok();
+        Integer stok = barang.getStok();
         stok = stok - penjualan.getJumlah();
         barang.setStok(stok);
         br.save(barang);
@@ -29,7 +29,7 @@ public class PenjualanEventHandler {
     @HandleBeforeDelete
     public void handlePenjualanDelete(Penjualan penjualan) {
         Barang barang = br.findOne(penjualan.getId_barang());
-        Long stok = barang.getStok();
+        Integer stok = barang.getStok();
         stok = stok + penjualan.getJumlah();
         barang.setStok(stok);
         br.save(barang);

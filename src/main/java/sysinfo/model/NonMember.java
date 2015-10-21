@@ -7,9 +7,8 @@ import java.util.Date;
 @Table(name = "non_member")
 public class NonMember {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    @Id @GeneratedValue
+    private Integer id_nonmember;
 
     @Column(name = "nama", nullable = false)
     private String nama;
@@ -21,18 +20,15 @@ public class NonMember {
     @Column(name = "tanggal_datang", nullable = false)
     private Date tanggal_datang;
 
-    @Column(name = "kelas", nullable = false)
-    private String kelas;
-
     @Column(name = "biaya", nullable = false)
-    private Long biaya;
+    private Integer biaya;
 
-    public String getId() {
-        return id;
+    public Integer getId_nonmember() {
+        return id_nonmember;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId_nonmember(Integer id_nonmember) {
+        this.id_nonmember = id_nonmember;
     }
 
     public String getNama() {
@@ -59,19 +55,11 @@ public class NonMember {
         this.tanggal_datang = tanggal_datang;
     }
 
-    public String getKelas() {
-        return kelas;
-    }
-
-    public void setKelas(String kelas) {
-        this.kelas = kelas;
-    }
-
-    public Long getBiaya() {
+    public Integer getBiaya() {
         return biaya;
     }
 
-    public void setBiaya(Long biaya) {
+    public void setBiaya(Integer biaya) {
         this.biaya = biaya;
     }
 }

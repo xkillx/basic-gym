@@ -7,9 +7,11 @@ import java.util.Date;
 @Table(name = "perpanjang_member")
 public class PerpanjangMember {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    @Id @GeneratedValue
+    private Integer id_perpanjang;
+
+    @Column(name = "id_member", nullable = false)
+    private Integer id_member;
 
     @Column(name = "nama", nullable = false)
     private String nama;
@@ -21,12 +23,20 @@ public class PerpanjangMember {
     @Column(name = "biaya", nullable = false)
     private Long biaya;
 
-    public String getId() {
-        return id;
+    public Integer getId_perpanjang() {
+        return id_perpanjang;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId_perpanjang(Integer id_perpanjang) {
+        this.id_perpanjang = id_perpanjang;
+    }
+
+    public Integer getId_member() {
+        return id_member;
+    }
+
+    public void setId_member(Integer id_member) {
+        this.id_member = id_member;
     }
 
     public String getNama() {

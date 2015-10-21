@@ -1,4 +1,3 @@
-
 <h1>List Perpanjang Member</h1>
 
 <div class="row">
@@ -16,18 +15,24 @@
 
 <table class="table table-striped table-bordered">
     <tr>
-        <th>ID</th>
+        <th>No</th>
         <th>Nama</th>
         <th>Tanggal Perpanjang</th>
         <th>Biaya</th>
+        <th class="text-center">Aksi</th>
     </tr>
     <tr ng-hide="perpanjang_member.length">
         <td colspan="4" class="text-center">No Data</td>
     </tr>
-    <tr class="repeat-animation" ng-repeat="p in perpanjang_member | orderBy:'id' | filter:cari">
-        <td>{{p.id}}</td>
+    <tr class="repeat-animation" ng-repeat="p in perpanjang_member | orderBy:'id_perpanjang' | filter:cari">
+        <td>{{p.id_perpanjang}}</td>
         <td>{{p.nama}}</td>
         <td>{{p.tanggal_perpanjang | date : 'dd MMMM yyyy'}}</td>
         <td>{{p.biaya | currency:"Rp ":0}}</td>
+        <td class="text-center">
+            <button ng-click="delete(p.id_perpanjang)" class="btn btn-xs btn-danger">
+                Delete
+            </button>
+        </td>
     </tr>
 </table>

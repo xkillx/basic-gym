@@ -5,5 +5,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import sysinfo.model.Kelas;
 
 @RepositoryRestResource(collectionResourceRel = "kelas", path = "kelas")
-public interface KelasRepository extends JpaRepository<Kelas, String> {
+public interface KelasRepository extends JpaRepository<Kelas, Integer> {
 }

@@ -1,8 +1,8 @@
-<div ng-hide="member.id">
+<div ng-hide="member.id_member">
     <h1>Tambah Member Baru</h1>
 </div>
 
-<div ng-show="member.id">
+<div ng-show="member.id_member">
     <h1>Edit Data Member</h1>
 </div>
 
@@ -16,12 +16,6 @@
                     <p ng-show="memberForm.nama.$invalid && !memberForm.nama.$pristine" class="help-block">Nama tidak boleh kosong.</p>
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-error' : memberForm.alamat.$invalid && !memberForm.alamat.$pristine }">
-                    <label>Alamat</label>
-                    <input name="alamat" class="form-control" ng-model="member.alamat" required />
-                    <p ng-show="memberForm.alamat.$invalid && !memberForm.alamat.$pristine" class="help-block ">Alamat tidak boleh kosong.</p>
-                </div>
-
                 <div class="form-group" ng-class="{ 'has-error' : memberForm.tanggal_lahir.$invalid && !memberForm.tanggal_lahir.$pristine }">
                     <label>Tanggal Lahir</label>
                     <!-- <input name="tanggal_lahir" class="form-control" ng-model="member.tanggal_lahir" required />  -->
@@ -32,6 +26,37 @@
                         Tanggal lahir tidak boleh kosong
                     </p>
                 </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : memberForm.jalan.$invalid && !memberForm.jalan.$pristine }">
+                    <label>Jalan</label>
+                    <input name="jalan" class="form-control" ng-model="member.jalan" required />
+                    <p ng-show="memberForm.jalan.$invalid && !memberForm.jalan.$pristine" class="help-block ">Jalan tidak boleh kosong.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : memberForm.kelurahan.$invalid && !memberForm.kelurahan.$pristine }">
+                    <label>Kelurahan</label>
+                    <input name="jalan" class="form-control" ng-model="member.kelurahan" required />
+                    <p ng-show="memberForm.kelurahan.$invalid && !memberForm.kelurahan.$pristine" class="help-block ">Kelurahan tidak boleh kosong.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : memberForm.kecamatan.$invalid && !memberForm.kecamatan.$pristine }">
+                    <label>Kecamatan</label>
+                    <input name="kecamatan" class="form-control" ng-model="member.kecamatan" required />
+                    <p ng-show="memberForm.kecamatan.$invalid && !memberForm.kecamatan.$pristine" class="help-block ">Kecamatan tidak boleh kosong.</p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : memberForm.kota.$invalid && !memberForm.kota.$pristine }">
+                    <label>Kota</label>
+                    <input name="kota" class="form-control" ng-model="member.kota" required />
+                    <p ng-show="memberForm.kota.$invalid && !memberForm.kota.$pristine" class="help-block ">Kota tidak boleh kosong.</p>
+                </div>
+
+            </div> <!-- well -->
+
+        </div> <!-- col-md-6 -->
+
+        <div class="col-md-6">
+            <div class="well">
 
                 <div class="form-group" ng-class="{ 'has-error' : memberForm.gender.$invalid && !memberForm.gender.$pristine }">
                     <label>Gender</label>
@@ -52,13 +77,6 @@
                         Nomor telepon tidak boleh kosong
                     </p>
                 </div>
-                
-            </div> <!-- well -->
-
-        </div> <!-- col-md-6 -->
-
-        <div class="col-md-6">
-            <div class="well">
 
                 <div class="form-group" ng-class="{ 'has-error' : memberForm.pekerjaan.$invalid && !memberForm.pekerjaan.$pristine }">
                     <label>Pekerjaan</label>
@@ -80,22 +98,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Kelas</label>
-                    <input class="form-control" ng-model="member.kelas" disabled />
-                </div>
-
-                <div class="form-group">
-                    <label>Biaya</label>
-                    <input class="form-control" ng-model="member.biaya" disabled />
-                </div>
-
-                <div class="form-group">
                     <label>Biaya Daftar</label>
                     <input class="form-control" ng-model="member.biaya_daftar" disabled />
                 </div>
 
-                <button ng-disabled="memberForm.$invalid" class="btn btn-primary" ng-click="insertMember(member)" ng-hide="member.id">Simpan</button>
-                <button ng-disabled="memberForm.$invalid" class="btn btn-primary" ng-click="updateMember(member)" ng-show="member.id">Update</button>
+                <button ng-disabled="memberForm.$invalid" class="btn btn-primary" ng-click="insertMember(member)" ng-hide="member.id_member">Simpan</button>
+                <button ng-disabled="memberForm.$invalid" class="btn btn-primary" ng-click="updateMember(member)" ng-show="member.id_member">Update</button>
                 <button class="btn btn-default" ng-click="cancel()">Batal</button>
             </div> <!-- well -->
             

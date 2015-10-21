@@ -1,35 +1,32 @@
 package sysinfo.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "barang")
 public class Barang {
 
-    @Id
-    @GeneratedValue
-    private String id;
+    @Id @GeneratedValue
+    private Integer id_barang;
 
     @Column(name = "nama", nullable = false)
     private String nama;
 
     @Column(name = "harga", nullable = false)
-    private Long harga;
+    private Integer harga;
 
     @Column(name = "stok", nullable = false)
-    private Long stok;
+    private Integer stok;
 
-    @Column(name = "deskripsi", nullable = false)
+    @Column(name = "deskripsi", nullable = true)
     private String deskripsi;
 
-    public String getId() {
-        return id;
+    public Integer getId_barang() {
+        return id_barang;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId_barang(Integer id_barang) {
+        this.id_barang = id_barang;
     }
 
     public String getNama() {
@@ -40,19 +37,19 @@ public class Barang {
         this.nama = nama;
     }
 
-    public Long getHarga() {
+    public Integer getHarga() {
         return harga;
     }
 
-    public void setHarga(Long harga) {
+    public void setHarga(Integer harga) {
         this.harga = harga;
     }
 
-    public Long getStok() {
+    public Integer getStok() {
         return stok;
     }
 
-    public void setStok(Long stok) {
+    public void setStok(Integer stok) {
         this.stok = stok;
     }
 

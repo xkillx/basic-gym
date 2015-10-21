@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_penjualan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4d7ea674-d924-47d5-9958-fc7a3868a577">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="11"/>
 	<property name="ireport.y" value="0"/>
-	<field name="id" class="java.lang.String"/>
+	<field name="id_penjualan" class="java.lang.Integer"/>
 	<field name="tanggal" class="java.util.Date"/>
 	<field name="nama_barang" class="java.lang.String"/>
-	<field name="harga_barang" class="java.lang.Long"/>
-	<field name="jumlah" class="java.lang.Long"/>
-	<field name="total" class="java.lang.Long"/>
+	<field name="harga_barang" class="java.lang.Integer"/>
+	<field name="jumlah" class="java.lang.Integer"/>
+	<field name="total" class="java.lang.Integer"/>
+	<variable name="total" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{total}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -29,55 +32,55 @@
 	<columnHeader>
 		<band height="28" splitType="Stretch">
 			<staticText>
-				<reportElement x="13" y="2" width="25" height="20" uuid="38241896-2809-44dc-bad1-ce19a4113caa"/>
-				<text><![CDATA[ID]]></text>
+				<reportElement x="0" y="2" width="69" height="20" uuid="124d5732-e440-4e42-93d8-112f0e89a7c1"/>
+				<text><![CDATA[ID Penjualan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="38" y="2" width="100" height="20" uuid="9ec1bb4c-64ef-422f-9139-55c3c2891d1c"/>
+				<reportElement x="69" y="2" width="100" height="20" uuid="e647a77e-4e1e-4247-92d4-163447146ba1"/>
 				<text><![CDATA[Tanggal]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="144" y="2" width="100" height="20" uuid="c33845c6-83d8-4803-b912-990c3930b844"/>
+				<reportElement x="169" y="2" width="100" height="20" uuid="b94edcbf-03fb-4c9a-b412-052d0e7418a6"/>
 				<text><![CDATA[Nama Barang]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="248" y="2" width="100" height="20" uuid="4dc381e6-82af-47a0-b0e3-5e3496349d57"/>
+				<reportElement x="269" y="2" width="100" height="20" uuid="b69fef99-50d7-4656-91a1-11ad37321062"/>
 				<text><![CDATA[Harga Barang]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="355" y="2" width="100" height="20" uuid="1c56e19d-61b5-45a0-b623-34c55f2cc081"/>
+				<reportElement x="369" y="2" width="59" height="20" uuid="64e12097-8ab5-452a-be2d-33283865780c"/>
 				<text><![CDATA[Jumlah]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="455" y="2" width="100" height="20" uuid="7e94c5ed-7aa3-4a16-8e85-0a8e96dfd2b4"/>
+				<reportElement x="428" y="2" width="100" height="20" uuid="1ad415ef-9b36-473a-a9d3-e728ca91c849"/>
 				<text><![CDATA[Total]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="30" splitType="Stretch">
-			<textField>
-				<reportElement x="13" y="10" width="25" height="20" uuid="4d97c767-7e5c-49cd-8fa6-62b59788c2fe"/>
-				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+		<band height="24" splitType="Stretch">
+			<textField pattern="PJL000">
+				<reportElement x="0" y="4" width="69" height="20" uuid="ccb656d0-f45b-46dc-81ab-814380b41f35"/>
+				<textFieldExpression><![CDATA[$F{id_penjualan}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="38" y="10" width="100" height="20" uuid="21160449-541e-4d0d-b202-156f98a97cbc"/>
+				<reportElement x="69" y="4" width="100" height="20" uuid="ba966e0c-0f32-4a93-aba3-4e9b26685768"/>
 				<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="144" y="10" width="100" height="20" uuid="673d9b1b-b08c-44be-98d8-01ef489ed0e9"/>
+			<textField pattern="#,##0">
+				<reportElement x="169" y="4" width="100" height="20" uuid="1e22d705-a02e-4972-bef1-136aa75b8738"/>
 				<textFieldExpression><![CDATA[$F{nama_barang}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="248" y="10" width="100" height="20" uuid="2201e42b-e783-4b39-b15c-df3c15ed7963"/>
+				<reportElement x="269" y="4" width="100" height="20" uuid="e553c234-2942-490d-bc7c-d09c313ebfca"/>
 				<textFieldExpression><![CDATA[$F{harga_barang}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="355" y="10" width="100" height="20" uuid="fcb3f82d-802f-4283-8174-0d44b5b1361e"/>
+				<reportElement x="369" y="4" width="59" height="20" uuid="dce90637-b4d7-47bc-9714-80f11454f313"/>
 				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="455" y="10" width="100" height="20" uuid="76fb0d73-f5cb-4e1e-9777-5ba55f8fe1df"/>
+				<reportElement x="428" y="4" width="100" height="20" uuid="1de0fc9f-5185-46d1-9634-455e8e9e0c8a"/>
 				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -89,6 +92,24 @@
 		<band splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band splitType="Stretch"/>
+		<band height="26" splitType="Stretch">
+			<textField pattern="#,##0">
+				<reportElement x="428" y="4" width="100" height="20" uuid="d4ef167f-c5ed-4a59-9bc9-b5f12cd8662f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="384" y="4" width="44" height="20" uuid="5e252252-4473-49de-aae7-a13442714b2c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="555" height="1" uuid="01dc4014-30dc-4032-a308-274363ed01bd"/>
+			</line>
+		</band>
 	</summary>
 </jasperReport>

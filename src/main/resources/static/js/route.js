@@ -3,8 +3,7 @@ app.config(['$routeProvider', function($routeProvider) {
         controller: 'LoginController',
         templateUrl: 'partials/login.html'
     }).when('/home', {
-        templateUrl: 'partials/home.html',
-        controller: 'IndexController'
+        templateUrl: 'partials/home.html'
     }).when('/kelas', {
         templateUrl: 'partials/kelas.html',
         controller: 'KelasController'
@@ -69,9 +68,12 @@ app.config(['$routeProvider', function($routeProvider) {
     }).when('/rekap-penjualan', {
         templateUrl: 'partials/rekap-penjualan.html',
         controller: 'RekapPenjualanController'
-    }).when('/rekap-pembelian', {
-        templateUrl: 'partials/rekap-pembelian.html',
-        controller: 'RekapPembelianController'
+    }).when('/rekap-barang', {
+        templateUrl: 'partials/rekap-barang.html',
+        controller: 'RekapBarangController'
+    }).when('/rekap-perpanjang', {
+        templateUrl: 'partials/rekap-perpanjang.html',
+        controller: 'RekapPerpanjangController'
     }).otherwise({
         redirectTo: '/login'
     });

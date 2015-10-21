@@ -1,7 +1,7 @@
+sysinfo\model\User.class
 sysinfo\repository\BarangRepository.class
 sysinfo\repository\PenjualanEventHandler.class
 sysinfo\CORSFilter.class
-sysinfo\model\Pembelian.class
 sysinfo\repository\NonMemberRepository.class
 sysinfo\controller\PenjualanReportController.class
 sysinfo\model\NonMember.class
@@ -13,7 +13,6 @@ sysinfo\controller\MemberReportController.class
 sysinfo\config\SecurityConfig.class
 sysinfo\repository\PenjualanRepository.class
 sysinfo\repository\KelasRepository.class
-sysinfo\controller\PembelianReportController.class
 sysinfo\model\PerpanjangMember.class
 sysinfo\model\Barang.class
 sysinfo\repository\PerpanjangMemberRepository.class
@@ -21,6 +20,4 @@ sysinfo\repository\MemberRepository.class
 sysinfo\controller\BarangReportController.class
 sysinfo\model\Member.class
 sysinfo\model\Penjualan.class
-sysinfo\repository\PembelianRepository.class
-sysinfo\repository\PembelianEventHandler.class
 sysinfo\Application.class

@@ -7,36 +7,34 @@ import java.util.Date;
 @Table(name = "penjualan")
 public class Penjualan {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private String id;
+    @Id @GeneratedValue
+    private Integer id_penjualan;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "tanggal", nullable = false)
     private Date tanggal;
 
     @Column(name = "id_barang", nullable = false)
-    private String id_barang;
+    private Integer id_barang;
 
     @Column(name = "nama_barang", nullable = false)
     private String nama_barang;
 
     @Column(name = "harga_barang", nullable = false)
-    private Long harga_barang;
+    private Integer harga_barang;
 
     @Column(name = "jumlah", nullable = false)
-    private Long jumlah;
+    private Integer jumlah;
 
     @Column(name = "total", nullable = false)
-    private Long total;
+    private Integer total;
 
-    public String getId() {
-        return id;
+    public Integer getId_penjualan() {
+        return id_penjualan;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId_penjualan(Integer id_penjualan) {
+        this.id_penjualan = id_penjualan;
     }
 
     public Date getTanggal() {
@@ -47,11 +45,11 @@ public class Penjualan {
         this.tanggal = tanggal;
     }
 
-    public String getId_barang() {
+    public Integer getId_barang() {
         return id_barang;
     }
 
-    public void setId_barang(String id_barang) {
+    public void setId_barang(Integer id_barang) {
         this.id_barang = id_barang;
     }
 
@@ -63,27 +61,27 @@ public class Penjualan {
         this.nama_barang = nama_barang;
     }
 
-    public Long getHarga_barang() {
+    public Integer getHarga_barang() {
         return harga_barang;
     }
 
-    public void setHarga_barang(Long harga_barang) {
+    public void setHarga_barang(Integer harga_barang) {
         this.harga_barang = harga_barang;
     }
 
-    public Long getJumlah() {
+    public Integer getJumlah() {
         return jumlah;
     }
 
-    public void setJumlah(Long jumlah) {
+    public void setJumlah(Integer jumlah) {
         this.jumlah = jumlah;
     }
 
-    public Long getTotal() {
+    public Integer getTotal() {
         return total;
     }
 
-    public void setTotal(Long total) {
+    public void setTotal(Integer total) {
         this.total = total;
     }
 }

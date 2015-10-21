@@ -3,10 +3,10 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<field name="id" class="java.lang.String"/>
+	<field name="id_barang" class="java.lang.Integer"/>
 	<field name="nama" class="java.lang.String"/>
-	<field name="harga" class="java.lang.Long"/>
-	<field name="stok" class="java.lang.Long"/>
+	<field name="harga" class="java.lang.Integer"/>
+	<field name="stok" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -27,39 +27,51 @@
 	<columnHeader>
 		<band height="26" splitType="Stretch">
 			<staticText>
-				<reportElement x="59" y="2" width="100" height="20" uuid="31957532-dcf9-4449-b83e-486778e67e1e"/>
-				<text><![CDATA[ID]]></text>
+				<reportElement x="60" y="2" width="100" height="20" uuid="191390c8-fc63-4c4e-80d0-ef628119789a"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[ID Barang]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="178" y="2" width="100" height="20" uuid="6699cc60-3aba-402d-941b-b539142073cc"/>
-				<text><![CDATA[Nama Barang]]></text>
+				<reportElement x="171" y="2" width="100" height="20" uuid="78f063ed-5644-46e0-baa8-77ca0c9f0093"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="303" y="2" width="100" height="20" uuid="d609de6e-f843-45ac-979a-aa915de74f3b"/>
+				<reportElement x="288" y="2" width="100" height="20" uuid="bfcada95-daca-486c-b754-e29a60bf4284"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
 				<text><![CDATA[Harga]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="430" y="2" width="100" height="20" uuid="69897da9-2c28-4dd1-b621-d395a98d624f"/>
+				<reportElement x="406" y="2" width="100" height="20" uuid="a465b149-ab10-4a61-84f0-775467c634fd"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
 				<text><![CDATA[Stok]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="24" splitType="Stretch">
-			<textField>
-				<reportElement x="59" y="4" width="100" height="20" uuid="aa75c44f-9c61-464e-8166-124f6f7df594"/>
-				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			<textField pattern="BRG000">
+				<reportElement x="60" y="4" width="100" height="20" uuid="bba030a8-9a3d-411b-abdc-e142d07ded7e"/>
+				<textFieldExpression><![CDATA[$F{id_barang}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="178" y="4" width="100" height="20" uuid="624cd3cf-5f92-4864-adb4-ee2076c0b928"/>
+				<reportElement x="171" y="4" width="100" height="20" uuid="aa75d3ae-441a-4478-be55-5fef58ebf0ef"/>
 				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="303" y="4" width="100" height="20" uuid="cecc3bd2-7289-47e3-85da-1832e5c35698"/>
+				<reportElement x="288" y="4" width="100" height="20" uuid="b3c0083a-8010-493a-a972-e84c3901b496"/>
 				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="430" y="4" width="100" height="20" uuid="2d0756d7-2a83-4ae2-bc5d-3ef8dc10e833"/>
+				<reportElement x="406" y="4" width="100" height="20" uuid="1d76ea61-1c80-487a-aa44-e33fd605affc"/>
 				<textFieldExpression><![CDATA[$F{stok}]]></textFieldExpression>
 			</textField>
 		</band>
