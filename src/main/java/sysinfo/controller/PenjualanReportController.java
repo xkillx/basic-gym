@@ -37,15 +37,6 @@ public class PenjualanReportController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 
-    /*@RequestMapping("/report/penjualan")
-    public ModelAndView generateReportMember(ModelAndView m) {
-        Iterable<Penjualan> data = penjualanRepository.findAll();
-        m.addObject("dataSource", data);
-        m.addObject("format", "pdf");
-        m.setViewName("report_penjualan");
-        return m;
-    }*/
-
     @RequestMapping(value = "/report/penjualan", method = RequestMethod.GET, produces = "application/pdf")
     public void generateReportMemberPerPeriode(@RequestParam(value = "mulai") Date mulai,
                                                @RequestParam(value = "akhir") Date akhir,

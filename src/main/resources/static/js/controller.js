@@ -505,3 +505,11 @@ app.controller('RekapPenjualanController', ['$scope', '$location', function($sco
         toastr.info('Rekap penjualan dibatalkan.', "BATAL");
     };
 }]);
+
+app.controller('RekapPerpanjangController', ['$scope', '$location', function($scope, $location) {
+
+    $scope.cancel = function() {
+        $location.path('/home');
+        toastr.info('Rekap perpanjang member dibatalkan.', "BATAL");
+    };
+}]);

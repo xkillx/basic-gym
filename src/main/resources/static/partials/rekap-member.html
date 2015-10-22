@@ -1,24 +1,27 @@
 <h1>Laporan Data Member</h1>
 
-<form>
+<form name="laporan" novalidate>
     <div class="row">
         <div class="col-md-6">
             <div class="well">
-                <div class="form-group">
+                <div class="form-group" ng-class="{ 'has-error' : laporan.mulai.$invalid && !laporan.mulai.$pristine }">
                     <label>Tanggal Mulai</label>
                     <datepicker date-format="yyyy-MM-dd">
-                        <input name="tanggal_mulai" class="form-control" ng-model="tanggal.mulai" required />
+                        <input name="mulai" class="form-control" ng-model="tanggal.mulai" required />
+                    <p ng-show="laporan.mulai.$invalid && !laporan.mulai.$pristine" class="help-block">Mulai tidak boleh kosong.</p>
                     </datepicker>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" ng-class="{ 'has-error' : laporan.akhir.$invalid && !laporan.akhir.$pristine }">
                     <label>Tanggal Akhir</label>
                     <datepicker date-format="yyyy-MM-dd">
-                        <input name="tanggal_akhir" class="form-control" ng-model="tanggal.akhir" required />
+                        <input name="akhir" class="form-control" ng-model="tanggal.akhir" required />
+                    </datepicker>
+                    <p ng-show="laporan.akhir.$invalid && !laporan.akhir.$pristine" class="help-block">Akhir tidak boleh kosong.</p>
                     </datepicker>
                 </div>
 
-                <a href="/report/member?mulai={{ tanggal.mulai }}&akhir={{ tanggal.akhir }}" class="btn btn-primary" target="_blank">Cetak</a>
+                <a href="/report/member?mulai={{ tanggal.mulai }}&akhir={{ tanggal.akhir }}" class="btn btn-primary" ng-hide="laporan.$invalid" target="_blank">Cetak</a>
                 <button class="btn btn-default" ng-click="cancel()">Batal</button>
                 
             </div> <!-- well -->

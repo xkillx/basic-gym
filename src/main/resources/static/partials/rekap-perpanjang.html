@@ -1,4 +1,4 @@
-<h1>Laporan Data Non Member</h1>
+<h1>Laporan Data Perpanjang Member</h1>
 
 <form name="laporan" novalidate>
     <div class="row">
@@ -21,7 +21,7 @@
                     </datepicker>
                 </div>
 
-                <a href="/report/nonmember?mulai={{ tanggal.mulai }}&akhir={{ tanggal.akhir }}" class="btn btn-primary" ng-hide="laporan.$invalid" target="_blank">Cetak</a>
+                <a href="/report/perpanjang?mulai={{ tanggal.mulai }}&akhir={{ tanggal.akhir }}" class="btn btn-primary" ng-hide="laporan.$invalid" target="_blank">Cetak</a>
                 <button class="btn btn-default" ng-click="cancel()">Batal</button>
                 
             </div> <!-- well -->

@@ -87,7 +87,7 @@
 			<staticText>
 				<reportElement x="393" y="6" width="35" height="20" uuid="437827c7-053c-4b04-acbd-54af98691d5a"/>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total]]></text>
 			</staticText>
@@ -97,7 +97,7 @@
 			<textField pattern="#,##0">
 				<reportElement x="438" y="6" width="100" height="20" uuid="15284531-4299-439c-860c-e690e0cb1ae5"/>
 				<textElement>
-					<font isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
 			</textField>

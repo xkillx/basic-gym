@@ -25,15 +25,6 @@ public class BarangReportController {
     @Autowired
     private BarangRepository barangRepository;
 
-    /*@RequestMapping("/report/barang")
-    public ModelAndView generateReportMember(ModelAndView m) {
-        Iterable<Barang> data = barangRepository.findAll();
-        m.addObject("dataSource", data);
-        m.addObject("format", "pdf");
-        m.setViewName("report_barang");
-        return m;
-    }*/
-
     @RequestMapping(value = "/report/barang", method = RequestMethod.GET, produces = "application/pdf")
     public void generateReportBarang(HttpServletResponse response) throws Exception {
         List<Barang> data = barangRepository.findAll();
