@@ -27,7 +27,7 @@
         <td colspan="7" class="text-center">No Data</td>
     </tr>
     <tr class="repeat-animation" ng-repeat="p in penjualan | orderBy:'id_penjualan' | filter:cari">
-        <td>{{p.id_penjualan}}</td>
+        <td>{{ $index + 1 }}</td>
         <td>{{p.tanggal}}</td>
         <td>{{p.nama_barang}}</td>
         <td>{{p.harga_barang | currency:"Rp ":0}}</td>

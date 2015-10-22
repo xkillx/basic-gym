@@ -27,7 +27,7 @@
         <td colspan="6" class="text-center">No Data</td>
     </tr>
     <tr class="repeat-animation" ng-repeat="n in non_member | orderBy:'id_nonmember' | filter:cari">
-        <td>{{n.id_nonmember}}</td>
+        <td>{{ $index + 1 }}</td>
         <td>{{n.nama}}</td>
         <td>{{n.gender}}</td>
         <td>{{n.tanggal_datang | date : 'dd MMMM yyyy'}}</td>

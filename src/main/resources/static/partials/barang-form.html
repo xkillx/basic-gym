@@ -19,21 +19,22 @@
 
                 <div class="form-group" ng-class="{ 'has-error' : barangForm.harga.$invalid && !barangForm.harga.$pristine }">
                     <label>Harga</label>
-                    <input name="harga" class="form-control" 
+                    <input type="number" name="harga" class="form-control" 
                         ng-model="barang.harga" required />
-                    <p ng-show="barangForm.harga.$invalid && !barangForm.harga.$pristine" class="help-block ">Harga tidak boleh kosong.</p>
+                    <p ng-show="barangForm.harga.$invalid && !barangForm.harga.$pristine" class="help-block ">Harga tidak boleh kosong. Dan hanya boleh angka.</p>
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-error' : barangForm.harga.$invalid && !barangForm.harga.$pristine }">
+                <div class="form-group" ng-class="{ 'has-error' : barangForm.stok.$invalid && !barangForm.stok.$pristine }">
                     <label>Stok</label>
-                    <input name="stok" class="form-control" 
+                    <input type="number" name="stok" class="form-control" 
                         ng-model="barang.stok" required />
-                    <p ng-show="barangForm.stok.$invalid && !barangForm.stok.$pristine" class="help-block ">Stok tidak boleh kosong.</p>
+                    <p ng-show="barangForm.stok.$invalid && !barangForm.stok.$pristine" class="help-block ">Stok tidak boleh kosong. Dan hanya boleh angka.</p>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" ng-class="{ 'has-error' : barangForm.deskripsi.$invalid && !barangForm.deskripsi.$pristine }">
                     <label>Deskripsi</label>
-                    <input name="deskripsi" class="form-control" ng-model="barang.deskripsi" />
+                    <input name="deskripsi" class="form-control" ng-model="barang.deskripsi" required />
+                    <p ng-show="barangForm.deskripsi.$invalid && !barangForm.deskripsi.$pristine" class="help-block ">Deskripsi tidak boleh kosong.</p>
                 </div>
 
                 <button ng-disabled="barangForm.$invalid" class="btn btn-primary" ng-click="insertBarang(barang)" ng-hide="barang.id_barang">Simpan</button>

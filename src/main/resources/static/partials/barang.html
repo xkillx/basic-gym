@@ -27,7 +27,7 @@
         <td colspan="5" class="text-center">No Data</td>
     </tr>
     <tr class="repeat-animation" ng-repeat="b in barang | orderBy:'id_barang' | filter:cari">
-        <td>{{b.id_barang}}</td>
+        <td>{{ $index + 1 }}</td>
         <td>{{b.nama}}</td>
         <td>{{b.harga | currency:"Rp ":0}}</td>
         <td>{{b.stok | number}}</td>

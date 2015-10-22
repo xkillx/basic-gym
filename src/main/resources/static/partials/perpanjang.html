@@ -25,7 +25,7 @@
         <td colspan="4" class="text-center">No Data</td>
     </tr>
     <tr class="repeat-animation" ng-repeat="p in perpanjang_member | orderBy:'id_perpanjang' | filter:cari">
-        <td>{{p.id_perpanjang}}</td>
+        <td>{{ $index + 1 }}</td>
         <td>{{p.nama}}</td>
         <td>{{p.tanggal_perpanjang | date : 'dd MMMM yyyy'}}</td>
         <td>{{p.biaya | currency:"Rp ":0}}</td>

@@ -19,9 +19,9 @@ body {
   background: transparent;
 }
 
-.jumbotron .container {
+/*.jumbotron .container {
     background: rgba(0,0,0,0.5);
-}
+}*/
 
 datepicker input {
   margin-bottom: 20px;

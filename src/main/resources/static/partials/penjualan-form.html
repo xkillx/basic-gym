@@ -16,10 +16,15 @@
 
                <div class="form-group" ng-class="{ 'has-error' : penjualanForm.barang.$invalid && !penjualanForm.barang.$pristine }">
                     <label>Pilih Barang</label>
-                    <select name="barang" class="form-control" ng-options="b as b.nama for b in barang" ng-model="selectedItem" ng-change="update()"></select>
+                    <select name="barang" class="form-control" ng-options="b as b.nama for b in barang" ng-model="selectedItem" ng-change="update()" required></select>
                     <p ng-show="penjualan.barang.$invalid && !penjualan.barang.$pristine" class="help-block">
                         Barang tidak boleh kosong
                     </p>
+                </div>
+
+                <div class="form-group">
+                    <label>Stok</label>
+                    <input name="stok" class="form-control" ng-model="selectedItem.stok" disabled />
                 </div>
 
                 <div class="form-group">
@@ -27,12 +32,16 @@
                     <input name="biaya" class="form-control" ng-model="penjualan.harga_barang" disabled />
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-error' : penjualanForm.jumlah.$invalid && !penjualanForm.jumlah.$pristine }">
+                <div class="form-group" ng-class="{ 'has-error' : (penjualanForm.jumlah.$invalid && !penjualanForm.jumlah.$pristine) || stok_error }">
                     <label>Jumlah</label>
-                    <input name="jumlah" class="form-control" type="text" ng-model="penjualan.jumlah" ng-change="change()" required>
+                    <input type="number" name="jumlah" class="form-control" type="text" ng-model="penjualan.jumlah" ng-change="change()" required>
                     <p ng-show="penjualanForm.jumlah.$invalid && !penjualanForm.jumlah.$pristine" class="help-block">
-                        Jumlah tidak boleh kosong
+                        Jumlah tidak boleh kosong. Dan hanya boleh angka.
                     </p>
+                    <p ng-show="!penjualanForm.jumlah.$invalid && stok_error" class="help-block">
+                        Stok tidak mencukupi. Dan tidak boleh nol.
+                    </p>
+
                 </div>
 
                 <div class="form-group">
@@ -40,7 +49,7 @@
                     <input name="biaya" class="form-control" ng-model="penjualan.total" disabled />
                 </div>
 
-                <button ng-disabled="penjualanForm.$invalid" class="btn btn-primary" ng-click="insert(penjualan)">Simpan</button>
+                <button ng-disabled="penjualanForm.$invalid || stok_error" class="btn btn-primary" ng-click="insert(penjualan)">Simpan</button>
                 <button class="btn btn-default" ng-click="cancel()">Batal</button>
                 
             </div> <!-- well -->
@@ -49,9 +58,11 @@
 
     </div> <!-- row -->
 
-    <!-- <div class="row">
-        {{penjualan | json}}
-    </div> -->
+    <pre>
+        {{penjualan}}
+        {{selectedItem}}
+        {{stok_error}}
+    </pre>
 
 </form>
 </div>

@@ -19,6 +19,7 @@
         <th>No</th>
         <th>Nama</th>
         <th>Tanggal Daftar</th>
+        <th>Biaya Daftar</th>
         <th class="text-center">Perpanjang</th>
         <th class="text-center">Aksi</th>
     </tr>
@@ -26,9 +27,11 @@
         <td colspan="5" class="text-center">No Data</td>
     </tr>
     <tr class="repeat-animation" ng-repeat="m in member | orderBy:'id_member' | filter:cari">
-        <td>{{m.id_member}}</td>
+        <td>{{ $index + 1 }}</td>
+        <!-- <td>{{m.id_member}}</td> -->
         <td>{{m.nama}}</td>
         <td>{{m.tanggal_daftar | date : 'dd MMMM yyyy'}}</td>
+        <td>{{m.biaya_daftar | currency:"Rp ":0}}</td>
         <td class="text-center">
             <a href="#/member/perpanjang/{{ m.id_member }}" class="btn btn-xs btn-success">Perpanjang</a>
         </td>

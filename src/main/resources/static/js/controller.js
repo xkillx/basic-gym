@@ -106,10 +106,10 @@ app.controller('MemberListController', ['$scope', '$location', 'memberService', 
 
 app.controller('MemberTambahController', ['$scope', '$location', 'memberService', 'kelasService', function($scope, $location, memberService, kelasService) {
     $scope.now = (new Date()).toString();
-    
-    kelasService.getListKelas()
+
+    kelasService.getKelas(1)
         .success(function (data) {
-            $scope.member.biaya_daftar = data._embedded.kelas[0].biaya_daftar;
+            $scope.member.biaya_daftar = data.biaya_daftar;
         })
         .error(function (error) {
             toastr.error(error.message, "Error!");
@@ -179,6 +179,7 @@ app.controller('PerpanjangController', ['$scope', '$location', '$routeParams', '
 
     memberService.getMember(id)
         .success(function(data) {
+            $scope.perpanjang_member.id_member = data.id_member;
             $scope.perpanjang_member.nama = data.nama;
         })
         .error(function(error) {
@@ -188,7 +189,7 @@ app.controller('PerpanjangController', ['$scope', '$location', '$routeParams', '
     $scope.insert = function(p) {
         perpanjangService.insert(p)
             .success(function () {
-                $location.path('/member');
+                $location.path('/perpanjang-member');
                 toastr.success("Data berhasil disimpan", "SUCCESS");
             })
             .error(function (error) {
@@ -441,6 +442,7 @@ app.controller('PenjualanListController', ['$scope', '$location', 'penjualanServ
 }]);
 
 app.controller('PenjualanTambahController', ['$scope', '$location', 'barangService', 'penjualanService', function($scope, $location, barangService, penjualanService) {
+    $scope.stok_error = false;
     $scope.now = (new Date()).toString();
 
     getListBarang();
@@ -456,7 +458,22 @@ app.controller('PenjualanTambahController', ['$scope', '$location', 'barangServi
     }
 
     $scope.change = function() {
-        $scope.penjualan.total = $scope.penjualan.harga_barang * $scope.penjualan.jumlah;
+
+        if (!$scope.penjualan.jumlah || $scope.penjualan.jumlah == 0) {
+            $scope.stok_error = true;
+            $scope.penjualan.total = 0;
+            return;
+        }
+
+        if ($scope.selectedItem.stok >= $scope.penjualan.jumlah)  {
+            $scope.penjualan.total = $scope.penjualan.harga_barang * $scope.penjualan.jumlah;
+            $scope.stok_error = false;
+        }
+        else {
+            $scope.stok_error = true;
+            $scope.penjualan.total = 0;
+        }
+
     }
 
     $scope.update = function() {

@@ -28,25 +28,25 @@
                 </div>
 
                 <div class="form-group" ng-class="{ 'has-error' : memberForm.jalan.$invalid && !memberForm.jalan.$pristine }">
-                    <label>Jalan</label>
+                    <label>(Alamat) Jalan</label>
                     <input name="jalan" class="form-control" ng-model="member.jalan" required />
                     <p ng-show="memberForm.jalan.$invalid && !memberForm.jalan.$pristine" class="help-block ">Jalan tidak boleh kosong.</p>
                 </div>
 
                 <div class="form-group" ng-class="{ 'has-error' : memberForm.kelurahan.$invalid && !memberForm.kelurahan.$pristine }">
-                    <label>Kelurahan</label>
-                    <input name="jalan" class="form-control" ng-model="member.kelurahan" required />
+                    <label>(Alamat) Kelurahan</label>
+                    <input name="kelurahan" class="form-control" ng-model="member.kelurahan" required />
                     <p ng-show="memberForm.kelurahan.$invalid && !memberForm.kelurahan.$pristine" class="help-block ">Kelurahan tidak boleh kosong.</p>
                 </div>
 
                 <div class="form-group" ng-class="{ 'has-error' : memberForm.kecamatan.$invalid && !memberForm.kecamatan.$pristine }">
-                    <label>Kecamatan</label>
+                    <label>(Alamat) Kecamatan</label>
                     <input name="kecamatan" class="form-control" ng-model="member.kecamatan" required />
                     <p ng-show="memberForm.kecamatan.$invalid && !memberForm.kecamatan.$pristine" class="help-block ">Kecamatan tidak boleh kosong.</p>
                 </div>
 
                 <div class="form-group" ng-class="{ 'has-error' : memberForm.kota.$invalid && !memberForm.kota.$pristine }">
-                    <label>Kota</label>
+                    <label>(Alamat) Kota/Kabupaten</label>
                     <input name="kota" class="form-control" ng-model="member.kota" required />
                     <p ng-show="memberForm.kota.$invalid && !memberForm.kota.$pristine" class="help-block ">Kota tidak boleh kosong.</p>
                 </div>
@@ -74,7 +74,7 @@
                     <input name="telepon" class="form-control" 
                         ng-model="member.telepon" required />
                     <p ng-show="memberForm.telepon.$invalid && !memberForm.telepon.$pristine" class="help-block">
-                        Nomor telepon tidak boleh kosong
+                        Nomor telepon tidak boleh kosong. Dan hanya boleh angka.
                     </p>
                 </div>
 
