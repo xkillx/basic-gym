@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import sysinfo.model.Member;
+import sysinfo.model.Penjualan;
 import sysinfo.repository.PenjualanRepository;
 
 import javax.servlet.http.HttpServletResponse;
@@ -41,7 +41,7 @@ public class PenjualanReportController {
     public void generateReportMemberPerPeriode(@RequestParam(value = "mulai") Date mulai,
                                                @RequestParam(value = "akhir") Date akhir,
                                                HttpServletResponse response) throws Exception {
-        List<Member> data = penjualanRepository.cariPenjualanDari(mulai, akhir);
+        List<Penjualan> data = penjualanRepository.cariPenjualanDari(mulai, akhir);
 
         InputStream jasperStream = this.getClass().getResourceAsStream("/reports/report_penjualan.jasper");
         Map<String, Object> params = new HashMap<>();
