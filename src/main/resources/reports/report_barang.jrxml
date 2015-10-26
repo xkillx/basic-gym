@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_barang" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6bfc27d-fe50-4f31-a224-4af43e43d9e5">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.1000000000000005"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#5F9EA0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFFDFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
 	<field name="id_barang" class="java.lang.Integer"/>
 	<field name="nama" class="java.lang.String"/>
 	<field name="harga" class="java.lang.Integer"/>
@@ -11,14 +31,32 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="115" splitType="Stretch">
 			<staticText>
-				<reportElement x="166" y="25" width="237" height="34" uuid="213e715c-0103-4199-9539-aa0f438bb57f"/>
+				<reportElement x="160" y="77" width="237" height="34" uuid="213e715c-0103-4199-9539-aa0f438bb57f"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
 				<text><![CDATA[Laporan Data Barang]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="237" height="34" uuid="5f0c0fdf-d953-494b-9c40-1e778f3ec980"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Basic Gym]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="34" width="260" height="20" uuid="f0cef124-65a1-4e1c-841f-f0f6557f1de4"/>
+				<text><![CDATA[JL. Pahlawan No. 75 Duren Jaya Bekasi Timur 17111]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="54" width="184" height="20" uuid="379a8150-1822-44a7-822f-003fa82232ca"/>
+				<text><![CDATA[Contact : 081316987688/29DF02DD]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="77" width="555" height="1" uuid="9353fc0a-f3d1-483e-800f-22dbfa90523c"/>
+			</line>
 		</band>
 	</title>
 	<pageHeader>

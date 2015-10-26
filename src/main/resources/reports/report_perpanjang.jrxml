@@ -14,13 +14,31 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="113" splitType="Stretch">
 			<staticText>
-				<reportElement x="130" y="19" width="319" height="36" uuid="47c07283-5753-44b6-a443-baa780a6b4f0"/>
+				<reportElement x="130" y="75" width="319" height="36" uuid="47c07283-5753-44b6-a443-baa780a6b4f0"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
 				<text><![CDATA[Laporan Perpanjang Member]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="74" width="555" height="1" uuid="1a592e6d-ec29-4b4f-9952-2d6a43a62e09"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="54" width="184" height="20" uuid="fa83ff93-4b72-4bf3-9723-0edc5b08721b"/>
+				<text><![CDATA[Contact : 081316987688/29DF02DD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="237" height="34" uuid="980b7883-9b51-47aa-ad79-8900cf257246"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Basic Gym]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="34" width="260" height="20" uuid="194d82cc-c0af-4b1d-9771-b491522a067b"/>
+				<text><![CDATA[JL. Pahlawan No. 75 Duren Jaya Bekasi Timur 17111]]></text>
 			</staticText>
 		</band>
 	</title>

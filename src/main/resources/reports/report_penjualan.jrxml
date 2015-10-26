@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_penjualan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4d7ea674-d924-47d5-9958-fc7a3868a577">
-	<property name="ireport.zoom" value="1.3310000000000004"/>
-	<property name="ireport.x" value="11"/>
+	<property name="ireport.zoom" value="1.1000000000000003"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<field name="id_penjualan" class="java.lang.Integer"/>
 	<field name="tanggal" class="java.util.Date"/>
@@ -16,13 +16,31 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="112" splitType="Stretch">
 			<staticText>
-				<reportElement x="128" y="18" width="319" height="34" uuid="4f15bc2b-daba-40d2-863e-168ddd308506"/>
+				<reportElement x="129" y="74" width="319" height="34" uuid="4f15bc2b-daba-40d2-863e-168ddd308506"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
 				<text><![CDATA[Laporan Transaksi Penjualan]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="74" width="555" height="1" uuid="1c38c3af-cd89-4d6f-91da-c2585a2f6218"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="54" width="184" height="20" uuid="494ca211-c4d8-46fb-b14c-37f497734a26"/>
+				<text><![CDATA[Contact : 081316987688/29DF02DD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="237" height="34" uuid="a1f964e0-f69c-4ed3-b5bb-9945358cdca4"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Basic Gym]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="34" width="260" height="20" uuid="d32928d2-37ac-4794-8ce4-5db768dc6d5c"/>
+				<text><![CDATA[JL. Pahlawan No. 75 Duren Jaya Bekasi Timur 17111]]></text>
 			</staticText>
 		</band>
 	</title>
