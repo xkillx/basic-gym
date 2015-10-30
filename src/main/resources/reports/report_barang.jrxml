@@ -65,30 +65,58 @@
 	<columnHeader>
 		<band height="26" splitType="Stretch">
 			<staticText>
-				<reportElement x="60" y="2" width="100" height="20" uuid="191390c8-fc63-4c4e-80d0-ef628119789a"/>
-				<textElement>
-					<font isBold="false"/>
+				<reportElement x="60" y="0" width="111" height="26" uuid="191390c8-fc63-4c4e-80d0-ef628119789a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ID Barang]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="171" y="2" width="100" height="20" uuid="78f063ed-5644-46e0-baa8-77ca0c9f0093"/>
-				<textElement>
-					<font isBold="false"/>
+				<reportElement x="171" y="0" width="117" height="26" uuid="78f063ed-5644-46e0-baa8-77ca0c9f0093"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="288" y="2" width="100" height="20" uuid="bfcada95-daca-486c-b754-e29a60bf4284"/>
-				<textElement>
-					<font isBold="false"/>
+				<reportElement x="288" y="0" width="118" height="26" uuid="bfcada95-daca-486c-b754-e29a60bf4284"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Harga]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="406" y="2" width="100" height="20" uuid="a465b149-ab10-4a61-84f0-775467c634fd"/>
-				<textElement>
-					<font isBold="false"/>
+				<reportElement x="406" y="0" width="100" height="26" uuid="a465b149-ab10-4a61-84f0-775467c634fd"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Stok]]></text>
 			</staticText>
@@ -97,19 +125,51 @@
 	<detail>
 		<band height="24" splitType="Stretch">
 			<textField pattern="BRG000">
-				<reportElement x="60" y="4" width="100" height="20" uuid="bba030a8-9a3d-411b-abdc-e142d07ded7e"/>
+				<reportElement x="60" y="0" width="111" height="24" uuid="bba030a8-9a3d-411b-abdc-e142d07ded7e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{id_barang}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="171" y="4" width="100" height="20" uuid="aa75d3ae-441a-4478-be55-5fef58ebf0ef"/>
+				<reportElement x="171" y="0" width="117" height="24" uuid="aa75d3ae-441a-4478-be55-5fef58ebf0ef"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="288" y="4" width="100" height="20" uuid="b3c0083a-8010-493a-a972-e84c3901b496"/>
+				<reportElement x="288" y="0" width="118" height="24" uuid="b3c0083a-8010-493a-a972-e84c3901b496"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="406" y="4" width="100" height="20" uuid="1d76ea61-1c80-487a-aa44-e33fd605affc"/>
+				<reportElement x="406" y="0" width="100" height="24" uuid="1d76ea61-1c80-487a-aa44-e33fd605affc"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{stok}]]></textFieldExpression>
 			</textField>
 		</band>

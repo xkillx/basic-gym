@@ -48,39 +48,111 @@
 	<columnHeader>
 		<band height="26" splitType="Stretch">
 			<staticText>
-				<reportElement x="169" y="2" width="100" height="20" uuid="b55c6d29-41f6-4028-86de-6613635fe8d6"/>
+				<reportElement x="169" y="0" width="125" height="26" uuid="b55c6d29-41f6-4028-86de-6613635fe8d6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="294" y="2" width="100" height="20" uuid="0f71d6f3-ec38-4cf3-b0a9-88b767613020"/>
+				<reportElement x="294" y="0" width="136" height="26" uuid="0f71d6f3-ec38-4cf3-b0a9-88b767613020"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[Tanggal]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="430" y="2" width="100" height="20" uuid="1a4cb360-7fee-4277-8e00-8f6f92195736"/>
+				<reportElement x="430" y="0" width="100" height="26" uuid="1a4cb360-7fee-4277-8e00-8f6f92195736"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[Biaya]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="30" y="2" width="100" height="20" uuid="6d143853-d5ab-40f4-b847-41e0bab79c1d"/>
+				<reportElement x="30" y="0" width="139" height="26" uuid="6d143853-d5ab-40f4-b847-41e0bab79c1d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[ID Perpanjang]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="27" splitType="Stretch">
+		<band height="23" splitType="Stretch">
 			<textField>
-				<reportElement x="169" y="7" width="100" height="20" uuid="ebb50941-6711-4527-b260-7a81299aa5e6"/>
+				<reportElement x="169" y="0" width="125" height="23" uuid="ebb50941-6711-4527-b260-7a81299aa5e6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="294" y="7" width="100" height="20" uuid="55b6b5b6-4312-4dea-9994-1076b2e0df3b"/>
+				<reportElement x="294" y="0" width="136" height="23" uuid="55b6b5b6-4312-4dea-9994-1076b2e0df3b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{tanggal_perpanjang}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="430" y="7" width="100" height="20" uuid="ee4ea193-1464-4861-bfa3-632d315cf88b"/>
+				<reportElement x="430" y="0" width="100" height="23" uuid="ee4ea193-1464-4861-bfa3-632d315cf88b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{biaya}]]></textFieldExpression>
 			</textField>
 			<textField pattern="PJG000">
-				<reportElement x="30" y="7" width="100" height="20" uuid="6107f481-c384-4ed2-b1b6-a02300fd429b"/>
+				<reportElement x="30" y="0" width="139" height="23" uuid="6107f481-c384-4ed2-b1b6-a02300fd429b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{id_perpanjang}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -94,22 +166,33 @@
 	<summary>
 		<band height="27" splitType="Stretch">
 			<textField pattern="#,##0">
-				<reportElement x="430" y="7" width="100" height="20" uuid="83d9d5b8-e6d2-49ae-b1f2-6bfac79a8ea7"/>
-				<textElement>
+				<reportElement x="430" y="0" width="100" height="27" uuid="83d9d5b8-e6d2-49ae-b1f2-6bfac79a8ea7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="360" y="7" width="34" height="20" uuid="3b1bff3a-6f5c-49bc-bf0a-ee0a93352b2e"/>
-				<textElement>
+				<reportElement x="294" y="0" width="136" height="27" uuid="3b1bff3a-6f5c-49bc-bf0a-ee0a93352b2e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total]]></text>
 			</staticText>
-			<line>
-				<reportElement x="0" y="2" width="555" height="1" uuid="725242de-39e6-442f-89db-92e2517e7e7b"/>
-			</line>
 		</band>
 	</summary>
 </jasperReport>
